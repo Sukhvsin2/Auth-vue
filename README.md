@@ -2,6 +2,8 @@
 
 ## Build Setup
 
+Just Clone Django-Auth First
+
 ```bash
 # install dependencies
 $ yarn install
