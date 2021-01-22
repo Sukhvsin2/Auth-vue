@@ -1,12 +1,16 @@
 <template>
-  <v-container>Check</v-container>
+  <Navbar/>
 </template>
 
 <script>
-
+import Navbar from '../components/Navbar.vue'
 export default {
   components: {
+    Navbar
   }
 }
 </script>
 
+<style lang="stylus" scoped>
+
+</style>
