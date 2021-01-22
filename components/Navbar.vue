@@ -3,19 +3,29 @@
     <v-row class="align-center justify-space-between">
       <div class="heading">Auth App</div>
       <div>
-        <v-btn v-if="!isLoggedIn">Login</v-btn>
-        <v-btn v-else>Logout</v-btn>
+        <v-btn v-if="!isLoggedIn" to="/login">Login</v-btn>
+        <v-btn v-else @click="logout">Logout</v-btn>
       </div>
     </v-row>      
   </v-container>
 </template>
 
 <script>
+import authStore from "../store/auth"
 export default {
     name: 'Navbar',
     data(){
         return {
             isLoggedIn: false,
+        }
+    },
+    beforeMount(){
+        this.isLoggedIn = authStore.isLoggedIn();
+    },
+    methods: {
+        logout(){
+            authStore.logout()
+            this.$router.push({path: '/'})
         }
     }
 }
